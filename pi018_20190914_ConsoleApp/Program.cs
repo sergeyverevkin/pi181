@@ -1,11 +1,15 @@
-﻿using System;
+﻿// https://github.com/sergeyverevkin/pi181/
+
+#region usings
+using System;
+#endregion
 
 namespace ConsoleApp2
 {
   internal class Program
   {
     /// <summary>
-    /// 
+    /// Главная точка входа в консольное приложение
     /// </summary>
     /// <param name="args"></param>
     private static void Main(string[] args)
