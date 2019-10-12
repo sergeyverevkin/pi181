@@ -24,8 +24,69 @@ namespace pi018_20190914_ConsoleApp
       #endregion
 
       #region Console, assignment, function, return
-      h_WriteAnyKey();
+      // h_WriteAnyKey();
       #endregion
+
+      // h_DemoFor();
+
+      // h_DemoWhile();
+
+      // h_DemoStaticArray();
+
+      // h_DemoArrayList();
+
+      // h_DemoList();
+
+      h_DemoDictionary();
+
+    }
+
+    private static void h_DemoDictionary()
+    {
+      Dictionary<string, int> arRequiredWordCountDict =
+        new Dictionary<string, int>();
+      arRequiredWordCountDict.Clear();
+      arRequiredWordCountDict.Add("q", 1);
+      arRequiredWordCountDict.Remove("q");
+      arRequiredWordCountDict.Add("word1", 1);
+      arRequiredWordCountDict.Add("word2", 2);
+      // arDict.Add("word1", 2);
+      arRequiredWordCountDict["word3"] = 4;
+      arRequiredWordCountDict["word3"] = 3;
+
+      string sText = "word word1 word2 word5    word3";
+      string[] arWords = sText.Split(
+        new[] { ' ', ',' },
+        StringSplitOptions.RemoveEmptyEntries
+        );
+
+      foreach (string sWord in arWords) {
+        string sWordToLower = sWord.ToLower();
+        if (!arRequiredWordCountDict.ContainsKey(sWordToLower)) {
+          continue;
+        }
+        arRequiredWordCountDict[sWordToLower]--;
+      }
+
+      foreach (string sKey
+        in arRequiredWordCountDict.Keys) {
+        int iAbsentCount = 
+          arRequiredWordCountDict[sKey];
+        if (iAbsentCount <= 0) {
+          continue;
+        }
+        Console.WriteLine($"{{{ sKey }}} = { iAbsentCount } шт не хватает");
+      }
+
+      //for(int ii=0; ii<arWords.Length;ii++) {
+      //  string sWord = arWords[ii];
+      //  // ...
+      //}
+  
+    }
+
+    private static void h_DemoFor()
+    {
 
       #region for
       int iCount = 10;
@@ -71,9 +132,10 @@ namespace pi018_20190914_ConsoleApp
 
       // for (int jjj = 0; jjj < 10; Console.WriteLine(jjj++));
       #endregion
+    }
 
-      #region while
-
+    private static void h_DemoWhile()
+    {
       // while
       int kk = 0;   // #1
       while (kk < 30) { // #2
@@ -92,17 +154,6 @@ namespace pi018_20190914_ConsoleApp
       while (true) {
         // вечный цикл
       }
-      #endregion
-
-      h_DemoStaticArray();
-
-      h_DemoArrayList();
-
-      h_DemoList();
-
-      #region foreach
-      #endregion
-
     }
 
     private static void h_DemoArrayList()
@@ -125,7 +176,7 @@ namespace pi018_20190914_ConsoleApp
       arList2[2] = 3;
       arList2.Insert(
         index: 0,
-        value: "asd" 
+        value: "asd"
       );
 
       int iMax = int.MinValue;
@@ -159,12 +210,11 @@ namespace pi018_20190914_ConsoleApp
 
     }
 
-
     private static void h_DemoList()
     {
       #region 3# Типизированный индексированный список
       List<string> arList1 =
-        new List<string>() 
+        new List<string>()
         {
           "123", "Asd", "ddddd"
         };
