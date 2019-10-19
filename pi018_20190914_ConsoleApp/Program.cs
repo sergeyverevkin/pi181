@@ -37,8 +37,59 @@ namespace pi018_20190914_ConsoleApp
 
       // h_DemoList();
 
-      h_DemoDictionary();
+      // h_DemoDictionary();
 
+      h_TestSpeedArray();
+      h_TestSpeedHashset();
+
+      Console.ReadKey();
+    }
+
+    private static void h_TestSpeedHashset()
+    {
+      // HashSet<int> = Dictionary<int, bool>
+      int iMax = 9999900;
+      int iFindCount = 99990000;
+      // заполнил массив
+      HashSet<int> ar = new HashSet<int>();
+      for (int ii = 0; ii < iMax; ii++) {
+        ar.Add(ii + 1);
+      }
+
+      DateTime dtStart = DateTime.Now;
+      // поиск в массиве
+      for (int ii = 0; ii < iFindCount; ii++) {
+        int iNumberToFind = iMax - ii;
+        if (ar.Contains(iNumberToFind)) {
+          ar.Remove(iNumberToFind);
+        }
+      }
+      DateTime dtEnd = DateTime.Now;
+      Console.WriteLine($"Hashset: {dtEnd - dtStart}");
+    }
+
+    private static void h_TestSpeedArray()
+    {
+      int iMax = 99999;
+      int iFindCount = 9999;
+      // заполнил массив
+      int[] ar = new int[iMax];
+      for (int ii = 0; ii < iMax; ii++) {
+        ar[ii] = ii + 1;
+      }
+
+      DateTime dtStart = DateTime.Now;
+      // поиск в массиве
+      for (int ii = 0; ii < iFindCount; ii++) {
+        int iNumberToFind = iMax - ii;
+        for (int jj = 0; jj < ar.Length; jj++) {
+          if (ar[jj] == iNumberToFind) {
+            continue;
+          }
+        }
+      }
+      DateTime dtEnd = DateTime.Now;
+      Console.WriteLine($"Array: {dtEnd - dtStart}");
     }
 
     private static void h_DemoDictionary()
@@ -70,7 +121,7 @@ namespace pi018_20190914_ConsoleApp
 
       foreach (string sKey
         in arRequiredWordCountDict.Keys) {
-        int iAbsentCount = 
+        int iAbsentCount =
           arRequiredWordCountDict[sKey];
         if (iAbsentCount <= 0) {
           continue;
@@ -82,7 +133,7 @@ namespace pi018_20190914_ConsoleApp
       //  string sWord = arWords[ii];
       //  // ...
       //}
-  
+
     }
 
     private static void h_DemoFor()
@@ -139,14 +190,14 @@ namespace pi018_20190914_ConsoleApp
       // while
       int kk = 0;   // #1
       while (kk < 30) { // #2
-        // #4, тело цикла
+                        // #4, тело цикла
         kk++; // #3
       }
 
       // do .. while
       int mm = 0;   // #1
       do { // #2
-        // #4, тело цикла
+           // #4, тело цикла
         mm++; // #3
       } while (mm < 40);
 
@@ -249,8 +300,8 @@ namespace pi018_20190914_ConsoleApp
     {
       #region 1# Статические массивы
       int[] ar1; // указатель на массив
-      // int iSize = sizeof(int);
-      // int iD = default(int);
+                 // int iSize = sizeof(int);
+                 // int iD = default(int);
       ar1 = new int[2];
       // 00 00 00 00 00 00 00 00
       // ___________ ___________
