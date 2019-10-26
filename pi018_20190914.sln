@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "pi018_20190914_ConsoleApp",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "pi018_20190914_WinForms", "pi018_20190914_WinForms\pi018_20190914_WinForms.csproj", "{86C206A6-C0E7-48F1-9B34-6CA2E65E887B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "pi018_20191026_Classes", "pi018_20191026_Classes\pi018_20191026_Classes.csproj", "{2A0362AD-0974-4ED7-AF14-D49648226BAE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{86C206A6-C0E7-48F1-9B34-6CA2E65E887B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{86C206A6-C0E7-48F1-9B34-6CA2E65E887B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{86C206A6-C0E7-48F1-9B34-6CA2E65E887B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A0362AD-0974-4ED7-AF14-D49648226BAE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A0362AD-0974-4ED7-AF14-D49648226BAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A0362AD-0974-4ED7-AF14-D49648226BAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A0362AD-0974-4ED7-AF14-D49648226BAE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

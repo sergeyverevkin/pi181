@@ -4,6 +4,8 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
+using System.Text;
 #endregion
 
 namespace pi018_20190914_ConsoleApp
@@ -39,10 +41,74 @@ namespace pi018_20190914_ConsoleApp
 
       // h_DemoDictionary();
 
-      h_TestSpeedArray();
-      h_TestSpeedHashset();
+      // h_TestSpeedArray();
+      // h_TestSpeedHashset();
+      // h_TestEncoding();
+      h_TestFileWrite();
 
       Console.ReadKey();
+    }
+
+    private static void h_TestFileWrite()
+    {
+      string sFn = @"d:\1\1.none.txt";
+      if (!File.Exists(sFn)) {
+        Console.WriteLine("File is not found");
+        return;
+      }
+      // #1.
+      using (FileStream pS = File.OpenRead(sFn)) {
+        pS.Seek(0, SeekOrigin.Begin);
+        byte[] btContentInner = new byte[pS.Length];
+        int iLen = pS.Read(btContentInner, 0, btContentInner.Length);
+        //pS.Seek(5, SeekOrigin.Begin);
+        // pS.Seek(0, SeekOrigin.End);
+        // pS.Position;
+      }
+      // #2. 
+      byte[] btContent = File.ReadAllBytes(sFn);
+
+      // 2019-10-26
+      // Задание: 
+      // 1. из входной строки записать в файл 
+      // только те символы,
+      // которые есть в заданном массиве (цифры)
+      // 2. при посимвольном считывании подсчитать 
+      // количество повторяющихся символов, если 
+      // какой-то символ встречается более 3 раз,
+      // прекратить считывание.
+      // 3. вывести на экран символ, встретившийся
+      // более 3 раз.
+    }
+
+    private static void h_TestEncoding()
+    {
+      string sDir = @"d:\1\";
+      string[] arFn = new[] {
+        "1.none.txt",
+        "2.ascii.txt",
+        "3.utf8.txt",
+        "4.1251.txt",
+      };
+      string sText = "Word is a 'слово', 2";
+
+      File.WriteAllText(
+        Path.Combine(sDir, arFn[0]), sText);
+      File.WriteAllText(Path.Combine(sDir, arFn[1]), sText,
+        Encoding.ASCII);
+      File.WriteAllText(Path.Combine(sDir, arFn[2]), sText,
+        Encoding.UTF8);
+      File.WriteAllText(Path.Combine(sDir, arFn[3]), sText,
+        Encoding.GetEncoding(1251));
+
+      foreach (string sFn in arFn) {
+        string sF = Path.Combine(sDir, sFn);
+        string sLoadedText = File.ReadAllText(sF);
+        sLoadedText = File.ReadAllText(sF, Encoding.ASCII);
+        sLoadedText = File.ReadAllText(sF, Encoding.UTF8);
+        sLoadedText = File.ReadAllText(sF, Encoding.GetEncoding(1251));
+      }
+
     }
 
     private static void h_TestSpeedHashset()
@@ -400,4 +466,5 @@ namespace pi018_20190914_ConsoleApp
       return (iNum2 % 2 == 1);
     }
   }
+
 }
