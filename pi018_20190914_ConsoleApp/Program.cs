@@ -1,6 +1,7 @@
 ﻿// https://github.com/sergeyverevkin/pi181/
 
 #region usings
+using pi018_20191026_Classes;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -44,9 +45,18 @@ namespace pi018_20190914_ConsoleApp
       // h_TestSpeedArray();
       // h_TestSpeedHashset();
       // h_TestEncoding();
-      h_TestFileWrite();
+      // h_TestFileWrite();
+
+      h_TestClasses();
 
       Console.ReadKey();
+    }
+
+    private static void h_TestClasses()
+    {
+      Site pSite1 = new TestSite();
+      pSite1.Articles.RemoveAt(0);
+      Console.WriteLine(pSite1);
     }
 
     private static void h_TestFileWrite()
