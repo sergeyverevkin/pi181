@@ -1,6 +1,7 @@
 ﻿using pi018_20191026_Classes;
 using System;
 using System.Windows.Forms;
+using pi018_20191026_Classes.Site;
 
 namespace pi018_20190914_WinForms
 {

@@ -1,9 +1,11 @@
 ﻿#region usings
+
 using System;
 using System.Collections.Generic;
+
 #endregion
 
-namespace pi018_20191026_Classes
+namespace pi018_20191026_Classes.Site
 {
   /*
    * Сайт

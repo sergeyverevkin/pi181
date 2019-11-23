@@ -7,6 +7,8 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
+using pi018_20191026_Classes.Site;
+
 #endregion
 
 namespace pi018_20190914_ConsoleApp
@@ -46,7 +48,6 @@ namespace pi018_20190914_ConsoleApp
       // h_TestSpeedHashset();
       // h_TestEncoding();
       // h_TestFileWrite();
-
       h_TestClasses();
 
       Console.ReadKey();

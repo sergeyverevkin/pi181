@@ -41,10 +41,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Article.cs" />
-    <Compile Include="TestSite.cs" />
-    <Compile Include="Site.cs" />
+    <Compile Include="Keyboard\EKeyType.cs" />
+    <Compile Include="Keyboard\EKeyState.cs" />
+    <Compile Include="Keyboard\Key.cs" />
+    <Compile Include="Keyboard\Keyboard.cs" />
+    <Compile Include="Keyboard\MyKeyboard.cs" />
+    <Compile Include="Site\Article.cs" />
+    <Compile Include="Site\TestSite.cs" />
+    <Compile Include="Site\Site.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Keyboard\Description.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
