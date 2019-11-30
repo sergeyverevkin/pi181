@@ -32,5 +32,22 @@ namespace pi018_20190914_WinForms
         _site.Articles.RemoveAt(0);
       }
     }
+
+    private void btnForm_Click(object sender, EventArgs e)
+    {
+      using (BlockForm pBlockForm = new BlockForm())
+      {
+        DialogResult pResult = pBlockForm.ShowDialog();
+        switch (pResult)
+        {
+          case DialogResult.None:
+            break;
+          case DialogResult.OK:
+            break;
+          case DialogResult.Cancel:
+            break;
+        }
+      }
+    }
   }
 }

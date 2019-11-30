@@ -38,6 +38,7 @@
       this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
       this.btnStart = new System.Windows.Forms.Button();
       this.button1 = new System.Windows.Forms.Button();
+      this.btnForm = new System.Windows.Forms.Button();
       this.SuspendLayout();
       // 
       // textBox1
@@ -108,11 +109,22 @@
       this.button1.UseVisualStyleBackColor = true;
       this.button1.Click += new System.EventHandler(this.button1_Click);
       // 
+      // btnForm
+      // 
+      this.btnForm.Location = new System.Drawing.Point(495, 43);
+      this.btnForm.Name = "btnForm";
+      this.btnForm.Size = new System.Drawing.Size(75, 23);
+      this.btnForm.TabIndex = 6;
+      this.btnForm.Text = "Форма";
+      this.btnForm.UseVisualStyleBackColor = true;
+      this.btnForm.Click += new System.EventHandler(this.btnForm_Click);
+      // 
       // Form1
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(593, 193);
+      this.Controls.Add(this.btnForm);
       this.Controls.Add(this.button1);
       this.Controls.Add(this.btnStart);
       this.Controls.Add(this.lvNews);
@@ -136,6 +148,7 @@
     private System.Windows.Forms.ColumnHeader columnHeader3;
     private System.Windows.Forms.Button btnStart;
     private System.Windows.Forms.Button button1;
+    private System.Windows.Forms.Button btnForm;
   }
 }
 
