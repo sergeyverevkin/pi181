@@ -39,6 +39,7 @@
       this.btnStart = new System.Windows.Forms.Button();
       this.button1 = new System.Windows.Forms.Button();
       this.btnForm = new System.Windows.Forms.Button();
+      this.button2 = new System.Windows.Forms.Button();
       this.SuspendLayout();
       // 
       // textBox1
@@ -111,7 +112,7 @@
       // 
       // btnForm
       // 
-      this.btnForm.Location = new System.Drawing.Point(495, 43);
+      this.btnForm.Location = new System.Drawing.Point(495, 31);
       this.btnForm.Name = "btnForm";
       this.btnForm.Size = new System.Drawing.Size(75, 23);
       this.btnForm.TabIndex = 6;
@@ -119,11 +120,22 @@
       this.btnForm.UseVisualStyleBackColor = true;
       this.btnForm.Click += new System.EventHandler(this.btnForm_Click);
       // 
+      // button2
+      // 
+      this.button2.Location = new System.Drawing.Point(495, 60);
+      this.button2.Name = "button2";
+      this.button2.Size = new System.Drawing.Size(75, 23);
+      this.button2.TabIndex = 7;
+      this.button2.Text = "Клавиатура";
+      this.button2.UseVisualStyleBackColor = true;
+      this.button2.Click += new System.EventHandler(this.button2_Click);
+      // 
       // Form1
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(593, 193);
+      this.Controls.Add(this.button2);
       this.Controls.Add(this.btnForm);
       this.Controls.Add(this.button1);
       this.Controls.Add(this.btnStart);
@@ -149,6 +161,7 @@
     private System.Windows.Forms.Button btnStart;
     private System.Windows.Forms.Button button1;
     private System.Windows.Forms.Button btnForm;
+    private System.Windows.Forms.Button button2;
   }
 }
 

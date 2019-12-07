@@ -8,6 +8,7 @@ namespace pi018_20190914_WinForms
   public partial class Form1 : Form
   {
     private Site _site;
+    private KeyboardForm _keyboardForm;
 
     public Form1()
     {
@@ -48,6 +49,13 @@ namespace pi018_20190914_WinForms
             break;
         }
       }
+    }
+
+    private void button2_Click(object sender, EventArgs e)
+    {
+      if (_keyboardForm != null) return;
+      _keyboardForm = new KeyboardForm(textBox1);
+      _keyboardForm.Show(this);
     }
   }
 }
