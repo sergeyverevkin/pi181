@@ -1,13 +1,12 @@
 ﻿// https://github.com/sergeyverevkin/pi181/
 
 #region usings
-using pi018_20191026_Classes;
+using pi018_20191026_Classes.Site;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
-using pi018_20191026_Classes.Site;
 
 #endregion
 
@@ -21,36 +20,74 @@ namespace pi018_20190914_ConsoleApp
     /// <param name="args"></param>
     private static void Main(string[] args)
     {
-      #region comments
-      // Comment
-      /* multi line comment
-       * is over
-       */
-      #endregion
+      try {
 
-      #region Console, assignment, function, return
-      // h_WriteAnyKey();
-      #endregion
+        #region comments
+        // Comment
+        /* multi line comment
+         * is over
+         */
+        #endregion
 
-      // h_DemoFor();
+        #region Console, assignment, function, return
+        // h_WriteAnyKey();
+        #endregion
 
-      // h_DemoWhile();
+        // h_DemoFor();
 
-      // h_DemoStaticArray();
+        // h_DemoWhile();
 
-      // h_DemoArrayList();
+        // h_DemoStaticArray();
 
-      // h_DemoList();
+        // h_DemoArrayList();
 
-      // h_DemoDictionary();
+        // h_DemoList();
 
-      // h_TestSpeedArray();
-      // h_TestSpeedHashset();
-      // h_TestEncoding();
-      // h_TestFileWrite();
-      h_TestClasses();
+        // h_DemoDictionary();
 
-      Console.ReadKey();
+        // h_TestSpeedArray();
+        // h_TestSpeedHashset();
+        // h_TestEncoding();
+        // h_TestFileWrite();
+        // h_TestClasses();
+
+        h_TestException();
+
+      }
+      finally {
+        Console.ReadKey();
+      }
+    }
+
+    private static void h_TestException()
+    {
+      try {
+        // защищаемый блок
+        h_TestExceptionInner();
+      }
+      catch (Exception e) {
+        // обрабатывающий блок
+        throw;
+      }
+      Console.WriteLine("ok");
+    }
+
+    private static void h_TestExceptionInner()
+    {
+      try {
+        // защищаемый блок
+        h_TestExceptionInnerInner();
+      }
+      catch (Exception e) {
+        // обрабатывающий блок
+        Console.WriteLine(e);
+        throw;
+      }
+    }
+
+    private static void h_TestExceptionInnerInner()
+    {
+      throw new NotImplementedException();
     }
 
     private static void h_TestClasses()

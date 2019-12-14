@@ -40,14 +40,17 @@
       this.button1 = new System.Windows.Forms.Button();
       this.btnForm = new System.Windows.Forms.Button();
       this.button2 = new System.Windows.Forms.Button();
+      this.label1 = new System.Windows.Forms.Label();
+      this.label2 = new System.Windows.Forms.Label();
       this.SuspendLayout();
       // 
       // textBox1
       // 
-      this.textBox1.Location = new System.Drawing.Point(44, 57);
+      this.textBox1.Location = new System.Drawing.Point(12, 57);
       this.textBox1.Name = "textBox1";
       this.textBox1.Size = new System.Drawing.Size(179, 20);
       this.textBox1.TabIndex = 0;
+      this.textBox1.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyUp);
       // 
       // contextMenuStrip1
       // 
@@ -130,11 +133,33 @@
       this.button2.UseVisualStyleBackColor = true;
       this.button2.Click += new System.EventHandler(this.button2_Click);
       // 
+      // label1
+      // 
+      this.label1.AutoSize = true;
+      this.label1.Location = new System.Drawing.Point(12, 41);
+      this.label1.Name = "label1";
+      this.label1.Size = new System.Drawing.Size(35, 13);
+      this.label1.TabIndex = 8;
+      this.label1.Text = "label1";
+      // 
+      // label2
+      // 
+      this.label2.AutoSize = true;
+      this.label2.ForeColor = System.Drawing.Color.Red;
+      this.label2.Location = new System.Drawing.Point(12, 80);
+      this.label2.Name = "label2";
+      this.label2.Size = new System.Drawing.Size(78, 13);
+      this.label2.TabIndex = 9;
+      this.label2.Text = "Текст ошибки";
+      this.label2.Visible = false;
+      // 
       // Form1
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(593, 193);
+      this.Controls.Add(this.label2);
+      this.Controls.Add(this.label1);
       this.Controls.Add(this.button2);
       this.Controls.Add(this.btnForm);
       this.Controls.Add(this.button1);
@@ -162,6 +187,8 @@
     private System.Windows.Forms.Button button1;
     private System.Windows.Forms.Button btnForm;
     private System.Windows.Forms.Button button2;
+    private System.Windows.Forms.Label label1;
+    private System.Windows.Forms.Label label2;
   }
 }
 

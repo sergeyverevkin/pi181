@@ -20,6 +20,7 @@ namespace pi018_20191026_Classes.Site
   {
     #region fields
     public string Address;
+    public string Version;
     public List<Article> Articles;
     #endregion
 
@@ -45,6 +46,25 @@ namespace pi018_20191026_Classes.Site
     {
       Address = sAddress;
       Articles = new List<Article>();
+    }
+    #endregion
+
+    #region public methods
+    /// <summary>
+    /// Проверка версии
+    /// </summary>
+    public void Check()
+    {
+      foreach (char ch in Version) {
+        if (!Char.IsDigit(ch) && ch != '.') {
+          throw new CVersionInputDataException();
+        }
+      }
+
+      if (ArticleCount == 0)
+      {
+        throw new CNoArticlesInputDataException();
+      }
     }
     #endregion
 

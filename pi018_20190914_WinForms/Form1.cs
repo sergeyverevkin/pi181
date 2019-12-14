@@ -15,6 +15,9 @@ namespace pi018_20190914_WinForms
     {
       InitializeComponent();
       _site = new TestSite();
+
+      textBox1.Tag = label2;
+
     }
 
     private void btnStart_Click(object sender, EventArgs e)
@@ -64,6 +67,36 @@ namespace pi018_20190914_WinForms
       if (_keyboardForm != null) return;
       _keyboardForm = new KeyboardForm(textBox1);
       _keyboardForm.Show(this);
+    }
+
+    private void textBox1_KeyUp(
+      object sender, 
+      KeyEventArgs e)
+    {
+      TextBox tb = (sender as TextBox);
+      try {
+        _site.Version = tb.Text;
+        _site.Check();
+        // все нормально, ошибок нет
+        if (tb.Tag != null) {
+          (tb.Tag as Label).Visible = false;
+        } else
+        {
+          tb.BackColor = Color.White;
+        }
+      }
+      catch (CInputDataException pE)
+      {
+        if (tb.Tag != null)
+        {
+          (tb.Tag as Label).Text = pE.Message;
+          (tb.Tag as Label).Visible = true;
+        }
+        else
+        {
+          tb.BackColor = Color.Red;
+        }
+      }
     }
   }
 }
