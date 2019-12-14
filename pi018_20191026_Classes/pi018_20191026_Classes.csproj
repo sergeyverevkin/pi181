@@ -47,6 +47,7 @@
     <Compile Include="Keyboard\Keyboard.cs" />
     <Compile Include="Keyboard\MyKeyboard.cs" />
     <Compile Include="Site\Article.cs" />
+    <Compile Include="Site\EStatus.cs" />
     <Compile Include="Site\TestSite.cs" />
     <Compile Include="Site\Site.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -1,5 +1,6 @@
 ﻿using pi018_20191026_Classes;
 using System;
+using System.Drawing;
 using System.Windows.Forms;
 using pi018_20191026_Classes.Site;
 
@@ -22,6 +23,13 @@ namespace pi018_20190914_WinForms
       lvNews.Items.Clear();
       foreach(Article p in _site.Articles) {
         ListViewItem lviItem = lvNews.Items.Add(p.Date.ToString());
+        if (p.Status.HasFlag(EStatus.Deleted)) {
+          lviItem.BackColor = Color.Coral;
+        }
+        if (p.Status.HasFlag(EStatus.Archived))
+        {
+          lviItem.ForeColor = Color.DarkGray;
+        }
         lviItem.SubItems.Add(p.Author);
         lviItem.SubItems.Add(p.Subject);
       }

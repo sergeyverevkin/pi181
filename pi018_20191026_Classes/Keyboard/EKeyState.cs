@@ -3,7 +3,7 @@
   /// <summary>
   /// тип клавиши ( 1 = обычная, 2 = SHIFT, 3 = CapsLock)
   /// </summary>
-  public enum EKeyType
+  public enum EKeyType: int
   {
     /// <summary>
     /// зарезервировано
