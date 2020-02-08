@@ -2,7 +2,7 @@
 {
   public class CNoArticlesInputDataException : CInputDataException
   {
-    protected CNoArticlesInputDataException() : base("Нет ни одной статьи")
+    public CNoArticlesInputDataException() : base("Нет ни одной статьи")
     {
     }
   }

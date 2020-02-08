@@ -46,6 +46,10 @@
     <Compile Include="Keyboard\Key.cs" />
     <Compile Include="Keyboard\Keyboard.cs" />
     <Compile Include="Keyboard\MyKeyboard.cs" />
+    <Compile Include="OX\EGameStatus.cs" />
+    <Compile Include="OX\Field.cs" />
+    <Compile Include="OX\Game.cs" />
+    <Compile Include="OX\Player.cs" />
     <Compile Include="Site\Article.cs" />
     <Compile Include="Site\InputDataException.cs" />
     <Compile Include="Site\NoArticlesInputDataException.cs" />
@@ -57,6 +61,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Keyboard\Description.txt" />
+    <Content Include="OX\description.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

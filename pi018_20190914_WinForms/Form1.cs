@@ -98,5 +98,12 @@ namespace pi018_20190914_WinForms
         }
       }
     }
+
+    private void button3_Click(object sender, EventArgs e)
+    {
+      using (OXForm pBlockForm = new OXForm()) {
+        pBlockForm.ShowDialog();
+      }
+    }
   }
 }
