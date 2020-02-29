@@ -31,6 +31,8 @@ namespace pi018_20190914_WinForms
           break;
         case EGameStatus.Game:
           tabControl1.SelectedTab = tabPage2;
+          lbTUrn.Text = m_pGame.Players[m_pGame.CurrentPlayer].Symbol.ToString();
+
           h_RefreshField();
           break;
         case EGameStatus.Pause:
@@ -107,7 +109,7 @@ namespace pi018_20190914_WinForms
         return;
       }
 
-      m_pGame.Click(pTag.X, pTag.Y, iPlayer);
+      m_pGame.Click(pTag.X, pTag.Y, -1);
       h_Refresh();
     }
 

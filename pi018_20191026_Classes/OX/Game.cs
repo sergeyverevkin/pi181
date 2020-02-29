@@ -81,14 +81,13 @@ namespace pi018_20191026_Classes.OX
       Status = EGameStatus.Game;
     }
 
-    public void Click()
-    {
-      throw new NotImplementedException();
-    }
-
     public void Click(
-      int iX, int iY, int iPlayer)
+      int iX, int iY, int iPlayer = -1)
     {
+      if (iPlayer == -1)
+      {
+        iPlayer = CurrentPlayer;
+      }
       if (iPlayer != CurrentPlayer)
       {
         return;
@@ -115,6 +114,10 @@ namespace pi018_20191026_Classes.OX
       int iCounter = 0;
       bool bHasEmpty = false;
       for (int iX = 0; iX < Size; iX++) {
+
+        iCounter = 0;
+        pCurPl = null;
+
         for (int iY = 0; iY < Size; iY++) {
           CField pField = h_GetField(iX, iY);
           if (pField == null && pField.Owner == null) {
@@ -123,6 +126,8 @@ namespace pi018_20191026_Classes.OX
           }
           if (pField.Owner == null) {
             bHasEmpty = true;
+            iCounter = 0;
+            pCurPl = null;
             continue;
           }
 

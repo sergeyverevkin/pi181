@@ -29,17 +29,19 @@
     {
       this.tabControl1 = new System.Windows.Forms.TabControl();
       this.tabPage1 = new System.Windows.Forms.TabPage();
-      this.tabPage2 = new System.Windows.Forms.TabPage();
-      this.label1 = new System.Windows.Forms.Label();
-      this.edPlayer1 = new System.Windows.Forms.TextBox();
+      this.button1 = new System.Windows.Forms.Button();
+      this.label3 = new System.Windows.Forms.Label();
+      this.numSize = new System.Windows.Forms.NumericUpDown();
       this.edPlayer2 = new System.Windows.Forms.TextBox();
       this.label2 = new System.Windows.Forms.Label();
-      this.numSize = new System.Windows.Forms.NumericUpDown();
-      this.label3 = new System.Windows.Forms.Label();
-      this.button1 = new System.Windows.Forms.Button();
+      this.edPlayer1 = new System.Windows.Forms.TextBox();
+      this.label1 = new System.Windows.Forms.Label();
+      this.tabPage2 = new System.Windows.Forms.TabPage();
+      this.lbTUrn = new System.Windows.Forms.Label();
       this.tabControl1.SuspendLayout();
       this.tabPage1.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.numSize)).BeginInit();
+      this.tabPage2.SuspendLayout();
       this.SuspendLayout();
       // 
       // tabControl1
@@ -71,47 +73,24 @@
       this.tabPage1.Text = "Новая игра";
       this.tabPage1.UseVisualStyleBackColor = true;
       // 
-      // tabPage2
+      // button1
       // 
-      this.tabPage2.Location = new System.Drawing.Point(4, 25);
-      this.tabPage2.Name = "tabPage2";
-      this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-      this.tabPage2.Size = new System.Drawing.Size(792, 421);
-      this.tabPage2.TabIndex = 1;
-      this.tabPage2.Text = "Игра";
-      this.tabPage2.UseVisualStyleBackColor = true;
+      this.button1.Location = new System.Drawing.Point(27, 148);
+      this.button1.Name = "button1";
+      this.button1.Size = new System.Drawing.Size(75, 23);
+      this.button1.TabIndex = 6;
+      this.button1.Text = "Новая игра";
+      this.button1.UseVisualStyleBackColor = true;
+      this.button1.Click += new System.EventHandler(this.button1_Click);
       // 
-      // label1
+      // label3
       // 
-      this.label1.AutoSize = true;
-      this.label1.Location = new System.Drawing.Point(24, 15);
-      this.label1.Name = "label1";
-      this.label1.Size = new System.Drawing.Size(58, 13);
-      this.label1.TabIndex = 0;
-      this.label1.Text = "Игрок №1";
-      // 
-      // edPlayer1
-      // 
-      this.edPlayer1.Location = new System.Drawing.Point(27, 31);
-      this.edPlayer1.Name = "edPlayer1";
-      this.edPlayer1.Size = new System.Drawing.Size(147, 20);
-      this.edPlayer1.TabIndex = 1;
-      // 
-      // edPlayer2
-      // 
-      this.edPlayer2.Location = new System.Drawing.Point(27, 70);
-      this.edPlayer2.Name = "edPlayer2";
-      this.edPlayer2.Size = new System.Drawing.Size(147, 20);
-      this.edPlayer2.TabIndex = 3;
-      // 
-      // label2
-      // 
-      this.label2.AutoSize = true;
-      this.label2.Location = new System.Drawing.Point(24, 54);
-      this.label2.Name = "label2";
-      this.label2.Size = new System.Drawing.Size(58, 13);
-      this.label2.TabIndex = 2;
-      this.label2.Text = "Игрок №2";
+      this.label3.AutoSize = true;
+      this.label3.Location = new System.Drawing.Point(24, 93);
+      this.label3.Name = "label3";
+      this.label3.Size = new System.Drawing.Size(102, 13);
+      this.label3.TabIndex = 5;
+      this.label3.Text = "Размерность поля";
       // 
       // numSize
       // 
@@ -135,24 +114,57 @@
             0,
             0});
       // 
-      // label3
+      // edPlayer2
       // 
-      this.label3.AutoSize = true;
-      this.label3.Location = new System.Drawing.Point(24, 93);
-      this.label3.Name = "label3";
-      this.label3.Size = new System.Drawing.Size(102, 13);
-      this.label3.TabIndex = 5;
-      this.label3.Text = "Размерность поля";
+      this.edPlayer2.Location = new System.Drawing.Point(27, 70);
+      this.edPlayer2.Name = "edPlayer2";
+      this.edPlayer2.Size = new System.Drawing.Size(147, 20);
+      this.edPlayer2.TabIndex = 3;
       // 
-      // button1
+      // label2
       // 
-      this.button1.Location = new System.Drawing.Point(27, 148);
-      this.button1.Name = "button1";
-      this.button1.Size = new System.Drawing.Size(75, 23);
-      this.button1.TabIndex = 6;
-      this.button1.Text = "Новая игра";
-      this.button1.UseVisualStyleBackColor = true;
-      this.button1.Click += new System.EventHandler(this.button1_Click);
+      this.label2.AutoSize = true;
+      this.label2.Location = new System.Drawing.Point(24, 54);
+      this.label2.Name = "label2";
+      this.label2.Size = new System.Drawing.Size(58, 13);
+      this.label2.TabIndex = 2;
+      this.label2.Text = "Игрок №2";
+      // 
+      // edPlayer1
+      // 
+      this.edPlayer1.Location = new System.Drawing.Point(27, 31);
+      this.edPlayer1.Name = "edPlayer1";
+      this.edPlayer1.Size = new System.Drawing.Size(147, 20);
+      this.edPlayer1.TabIndex = 1;
+      // 
+      // label1
+      // 
+      this.label1.AutoSize = true;
+      this.label1.Location = new System.Drawing.Point(24, 15);
+      this.label1.Name = "label1";
+      this.label1.Size = new System.Drawing.Size(58, 13);
+      this.label1.TabIndex = 0;
+      this.label1.Text = "Игрок №1";
+      // 
+      // tabPage2
+      // 
+      this.tabPage2.Controls.Add(this.lbTUrn);
+      this.tabPage2.Location = new System.Drawing.Point(4, 25);
+      this.tabPage2.Name = "tabPage2";
+      this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+      this.tabPage2.Size = new System.Drawing.Size(792, 421);
+      this.tabPage2.TabIndex = 1;
+      this.tabPage2.Text = "Игра";
+      this.tabPage2.UseVisualStyleBackColor = true;
+      // 
+      // lbTUrn
+      // 
+      this.lbTUrn.AutoSize = true;
+      this.lbTUrn.Location = new System.Drawing.Point(726, 12);
+      this.lbTUrn.Name = "lbTUrn";
+      this.lbTUrn.Size = new System.Drawing.Size(38, 13);
+      this.lbTUrn.TabIndex = 1;
+      this.lbTUrn.Text = "Игрок";
       // 
       // OXForm
       // 
@@ -166,6 +178,8 @@
       this.tabPage1.ResumeLayout(false);
       this.tabPage1.PerformLayout();
       ((System.ComponentModel.ISupportInitialize)(this.numSize)).EndInit();
+      this.tabPage2.ResumeLayout(false);
+      this.tabPage2.PerformLayout();
       this.ResumeLayout(false);
 
     }
@@ -182,5 +196,6 @@
     private System.Windows.Forms.Label label3;
     private System.Windows.Forms.NumericUpDown numSize;
     private System.Windows.Forms.Button button1;
+    private System.Windows.Forms.Label lbTUrn;
   }
 }
